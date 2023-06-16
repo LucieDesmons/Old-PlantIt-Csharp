@@ -10,8 +10,8 @@
 
         public DateTime? UpdateDate { get; set; }
 
-        public PlantReferenceDto IdPlantReferenceNavigation { get; set; }
+        public PlantReferenceDto PlantReference { get; set; }
 
-        public UserDto IdUserNavigation { get; set; }
+        public UserDto User { get; set; }
     }
 }

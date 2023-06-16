@@ -15,5 +15,5 @@ public partial class UserHistoric
 
     public DateTime Date { get; set; }
 
-    public virtual User IdUserNavigation { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 }

@@ -23,9 +23,9 @@ public partial class PlantReference
 
     public string? Description { get; set; }
 
-    public virtual ICollection<CreatedBy> CreatedBies { get; set; } = new List<CreatedBy>();
+    public virtual ICollection<CreatedBy> CreatedByCollection { get; set; } = new List<CreatedBy>();
 
-    public virtual ICollection<Plant> Plants { get; set; } = new List<Plant>();
+    public virtual ICollection<PictureReference> PictureReferenceCollection { get; set; } = new List<PictureReference>();
 
-    public virtual ICollection<PictureReference> IdPictureReferences { get; set; } = new List<PictureReference>();
+    public virtual ICollection<Plant> PlantCollection { get; set; } = new List<Plant>();
 }

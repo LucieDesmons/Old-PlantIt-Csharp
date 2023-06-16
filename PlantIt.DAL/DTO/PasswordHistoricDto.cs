@@ -14,7 +14,7 @@ namespace PlantIt.DATA.DTO
 
         public DateTime? UpdateDate { get; set; }
 
-        public int AuthentificationId { get; set; }
+        public int IdAuthentification { get; set; }
 
         public AuthentificationDto Authentification { get; set; }
     }

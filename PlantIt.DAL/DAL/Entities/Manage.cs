@@ -13,7 +13,7 @@ public partial class Manage
 
     public DateTime? EndDate { get; set; }
 
-    public virtual User IdUserBotanistNavigation { get; set; } = null!;
+    public virtual User Botanist { get; set; } = null!;
 
-    public virtual User IdUserCustomerNavigation { get; set; } = null!;
+    public virtual User Customer { get; set; } = null!;
 }

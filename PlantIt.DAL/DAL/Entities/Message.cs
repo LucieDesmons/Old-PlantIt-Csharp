@@ -13,5 +13,5 @@ public partial class Message
 
     public int IdConversation { get; set; }
 
-    public virtual Conversation IdConversationNavigation { get; set; } = null!;
+    public virtual Conversation Conversation { get; set; } = null!;
 }

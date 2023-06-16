@@ -11,7 +11,7 @@ public partial class Picture
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual ICollection<Maintenance> IdMaintenances { get; set; } = new List<Maintenance>();
+    public virtual ICollection<Maintenance> MaintenanceCollection { get; set; } = new List<Maintenance>();
 
-    public virtual ICollection<Plant> IdPlants { get; set; } = new List<Plant>();
+    public virtual ICollection<Plant> PlantCollection { get; set; } = new List<Plant>();
 }

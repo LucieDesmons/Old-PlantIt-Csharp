@@ -26,30 +26,30 @@ namespace PlantIt.DATA.DTO
 
         public int IdUserType { get; set; }
 
-        public int AuthentificationId { get; set; }
+        public int IdAuthentification { get; set; }
+
+        public AddressDto Address { get; set; }
 
         public AuthentificationDto Authentification { get; set; }
 
-        public List<BankDetailsDto> BankDetails { get; set; }
+        public UserTypeDto UserType { get; set; }
 
-        public List<ConversationDto> ConversationIdUser1Navigations { get; set; }
+        public List<BankDetailsDto> BankDetailsCollection { get; set; }
 
-        public List<ConversationDto> ConversationIdUser2Navigations { get; set; }
+        public List<ConversationDto> ConversationUser1Collection { get; set; }
 
-        public List<CreatedByDto> CreatedBies { get; set; }
+        public List<ConversationDto> ConversationUser2Collection { get; set; }
 
-        public AddressDto IdAddressNavigation { get; set; }
+        public List<CreatedByDto> CreatedByCollection { get; set; }
 
-        public UserTypeDto IdUserTypeNavigation { get; set; }
+        public List<MaintenanceDto> MaintenanceCollection { get; set; }
 
-        public List<ManageDto> ManageIdUserBotanistNavigations { get; set; }
+        public List<ManageDto> ManageBotanistCollection { get; set; }
 
-        public List<ManageDto> ManageIdUserCustomerNavigations { get; set; }
+        public List<ManageDto> ManageCustomerCollection { get; set; }
 
-        public List<PlantDto> Plants { get; set; }
+        public List<PlantDto> PlantCollection { get; set; }
 
-        public List<UserHistoricDto> UserHistorics { get; set; }
-
-        public List<MaintenanceDto> IdMaintenances { get; set; }
+        public List<UserHistoricDto> UserHistoricCollection { get; set; }
     }
 }

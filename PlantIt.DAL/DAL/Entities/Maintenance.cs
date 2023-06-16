@@ -13,7 +13,7 @@ public partial class Maintenance
 
     public string? Report { get; set; }
 
-    public virtual ICollection<Picture> IdPictures { get; set; } = new List<Picture>();
+    public virtual ICollection<Picture> PictureCollection { get; set; } = new List<Picture>();
 
-    public virtual ICollection<User> IdUsers { get; set; } = new List<User>();
+    public virtual ICollection<User> UserCollection { get; set; } = new List<User>();
 }

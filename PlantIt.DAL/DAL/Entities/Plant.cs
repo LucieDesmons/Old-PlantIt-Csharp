@@ -21,11 +21,11 @@ public partial class Plant
 
     public int IdPlantReference { get; set; }
 
-    public virtual PlantReference IdPlantReferenceNavigation { get; set; } = null!;
+    public virtual PlantReference PlantReference { get; set; } = null!;
 
-    public virtual User IdUserNavigation { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 
-    public virtual ICollection<Conversation> IdConversations { get; set; } = new List<Conversation>();
+    public virtual ICollection<Conversation> ConversationCollection { get; set; } = new List<Conversation>();
 
-    public virtual ICollection<Picture> IdPictures { get; set; } = new List<Picture>();
+    public virtual ICollection<Picture> PictureCollection { get; set; } = new List<Picture>();
 }
