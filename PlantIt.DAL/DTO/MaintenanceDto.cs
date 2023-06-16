@@ -16,8 +16,8 @@ namespace PlantIt.DATA.DTO
 
         public string? Report { get; set; }
 
-        public List<PictureDto> IdPictures { get; set; }
+        public List<PictureDto> PictureCollection { get; set; }
 
-        public List<UserDto> IdUsers { get; set; }
+        public List<UserDto> UserCollection { get; set; }
     }
 }

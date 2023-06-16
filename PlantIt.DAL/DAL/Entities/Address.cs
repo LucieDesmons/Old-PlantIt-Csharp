@@ -17,5 +17,5 @@ public partial class Address
 
     public string? Town { get; set; }
 
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
+    public User User { get; set; }
 }

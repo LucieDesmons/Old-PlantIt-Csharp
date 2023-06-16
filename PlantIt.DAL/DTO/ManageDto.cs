@@ -16,8 +16,8 @@ namespace PlantIt.DATA.DTO
 
         public DateTime? EndDate { get; set; }
 
-        public UserDto IdUserBotanistNavigation { get; set; }
+        public UserDto Botanist{ get; set; }
 
-        public UserDto IdUserCustomerNavigation { get; set; }
+        public UserDto Customer { get; set; }
     }
 }

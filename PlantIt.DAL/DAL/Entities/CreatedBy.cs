@@ -13,7 +13,7 @@ public partial class CreatedBy
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual PlantReference IdPlantReferenceNavigation { get; set; } = null!;
+    public virtual PlantReference PlantReference { get; set; } = null!;
 
-    public virtual User IdUserNavigation { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 }

@@ -20,6 +20,6 @@ namespace PlantIt.DATA.DTO
 
         public DateTime Date { get; set; }
 
-        public UserDto IdUserNavigation { get; set; }
+        public UserDto User { get; set; }
     }
 }

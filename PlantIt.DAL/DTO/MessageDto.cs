@@ -16,6 +16,6 @@ namespace PlantIt.DATA.DTO
 
         public int IdConversation { get; set; }
 
-        public ConversationDto IdConversationNavigation { get; set; }
+        public ConversationDto Conversation { get; set; }
     }
 }
