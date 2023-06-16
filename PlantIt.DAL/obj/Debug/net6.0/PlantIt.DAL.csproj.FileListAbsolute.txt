@@ -1,0 +1,14 @@
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\bin\Debug\net6.0\PlantIt.DAL.deps.json
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\bin\Debug\net6.0\PlantIt.DAL.runtimeconfig.json
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\bin\Debug\net6.0\PlantIt.DAL.dll
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\bin\Debug\net6.0\PlantIt.DAL.pdb
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.csproj.AssemblyReference.cache
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.AssemblyInfoInputs.cache
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.AssemblyInfo.cs
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.dll
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\refint\PlantIt.DAL.dll
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.pdb
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\PlantIt.DAL.genruntimeconfig.cache
+C:\Users\Lucie\source\repos\PlantIt\PlantIt\PlantIt.DAL\obj\Debug\net6.0\ref\PlantIt.DAL.dll
