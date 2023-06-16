@@ -82,7 +82,7 @@ public partial class PlantItContext : DbContext
 
         modelBuilder.Entity<Authentification>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK_authentification_id");
+            entity.HasKey(e => e.IdAuthentification).HasName("PK_authentification_id");
 
             entity.ToTable("authentification");
 
@@ -90,9 +90,9 @@ public partial class PlantItContext : DbContext
 
             entity.HasIndex(e => e.Password, "AK_authentification_password_UNIQUE").IsUnique();
 
-            entity.Property(e => e.Id)
+            entity.Property(e => e.IdAuthentification)
                 .ValueGeneratedNever()
-                .HasColumnName("id");
+                .HasColumnName("id_authentification");
             entity.Property(e => e.Email)
                 .HasMaxLength(80)
                 .IsUnicode(false)
@@ -120,7 +120,7 @@ public partial class PlantItContext : DbContext
                 .HasColumnName("details");
             entity.Property(e => e.IdUser).HasColumnName("id_user");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.BankDetails)
+            entity.HasOne(d => d.User).WithMany(p => p.BankDetailsCollection)
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_bank_details_user");
@@ -142,12 +142,12 @@ public partial class PlantItContext : DbContext
             entity.Property(e => e.IdUser1).HasColumnName("id_user_1");
             entity.Property(e => e.IdUser2).HasColumnName("id_user_2");
 
-            entity.HasOne(d => d.IdUser1Navigation).WithMany(p => p.ConversationIdUser1Navigations)
+            entity.HasOne(d => d.User1).WithMany(p => p.ConversationUser1Collection)
                 .HasForeignKey(d => d.IdUser1)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Conversation_User1");
 
-            entity.HasOne(d => d.IdUser2Navigation).WithMany(p => p.ConversationIdUser2Navigations)
+            entity.HasOne(d => d.User2).WithMany(p => p.ConversationUser2Collection)
                 .HasForeignKey(d => d.IdUser2)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Conversation_User2");
@@ -170,12 +170,12 @@ public partial class PlantItContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("update_date");
 
-            entity.HasOne(d => d.IdPlantReferenceNavigation).WithMany(p => p.CreatedBies)
+            entity.HasOne(d => d.PlantReference).WithMany(p => p.CreatedByCollection)
                 .HasForeignKey(d => d.IdPlantReference)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_created_by_plant_reference");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.CreatedBies)
+            entity.HasOne(d => d.User).WithMany(p => p.CreatedByCollection)
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_created_by_user");
@@ -201,7 +201,7 @@ public partial class PlantItContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("report");
 
-            entity.HasMany(d => d.IdPictures).WithMany(p => p.IdMaintenances)
+            entity.HasMany(d => d.PictureCollection).WithMany(p => p.MaintenanceCollection)
                 .UsingEntity<Dictionary<string, object>>(
                     "MaintenancePicture",
                     r => r.HasOne<Picture>().WithMany()
@@ -222,7 +222,7 @@ public partial class PlantItContext : DbContext
                         j.IndexerProperty<int>("IdPicture").HasColumnName("id_picture");
                     });
 
-            entity.HasMany(d => d.IdUsers).WithMany(p => p.IdMaintenances)
+            entity.HasMany(d => d.UserCollection).WithMany(p => p.MaintenanceCollection)
                 .UsingEntity<Dictionary<string, object>>(
                     "MaintenanceUser",
                     r => r.HasOne<User>().WithMany()
@@ -263,12 +263,12 @@ public partial class PlantItContext : DbContext
                 .HasColumnType("date")
                 .HasColumnName("start_date");
 
-            entity.HasOne(d => d.IdUserBotanistNavigation).WithMany(p => p.ManageIdUserBotanistNavigations)
+            entity.HasOne(d => d.Botanist).WithMany(p => p.ManageBotanistCollection)
                 .HasForeignKey(d => d.IdUserBotanist)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_User_has_User_User2");
 
-            entity.HasOne(d => d.IdUserCustomerNavigation).WithMany(p => p.ManageIdUserCustomerNavigations)
+            entity.HasOne(d => d.Customer).WithMany(p => p.ManageCustomerCollection)
                 .HasForeignKey(d => d.IdUserCustomer)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_User_has_User_User1");
@@ -294,7 +294,7 @@ public partial class PlantItContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("update_date");
 
-            entity.HasOne(d => d.IdConversationNavigation).WithMany(p => p.Messages)
+            entity.HasOne(d => d.Conversation).WithMany(p => p.MessageCollection)
                 .HasForeignKey(d => d.IdConversation)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Message_Conversation1");
@@ -308,10 +308,10 @@ public partial class PlantItContext : DbContext
 
             entity.HasIndex(e => e.IdHistoric, "AK_password_historic_idHistoric_UNIQUE").IsUnique();
 
-            entity.HasIndex(e => e.AuthentificationId, "fk_password_historic_authentification1_idx");
+            entity.HasIndex(e => e.IdAuthentification, "fk_password_historic_authentification1_idx");
 
             entity.Property(e => e.IdHistoric).HasColumnName("id_historic");
-            entity.Property(e => e.AuthentificationId).HasColumnName("authentification_id");
+            entity.Property(e => e.IdAuthentification).HasColumnName("authentification_id");
             entity.Property(e => e.Password)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -320,8 +320,8 @@ public partial class PlantItContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("update_date");
 
-            entity.HasOne(d => d.Authentification).WithMany(p => p.PasswordHistorics)
-                .HasForeignKey(d => d.AuthentificationId)
+            entity.HasOne(d => d.Authentification).WithMany(p => p.PasswordHistoricCollection)
+                .HasForeignKey(d => d.IdAuthentification)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_password_historic_authentification1");
         });
@@ -392,17 +392,17 @@ public partial class PlantItContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("place_plant");
 
-            entity.HasOne(d => d.IdPlantReferenceNavigation).WithMany(p => p.Plants)
+            entity.HasOne(d => d.PlantReference).WithMany(p => p.PlantCollection)
                 .HasForeignKey(d => d.IdPlantReference)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Plant_PlantReference1");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Plants)
+            entity.HasOne(d => d.User).WithMany(p => p.PlantCollection)
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Plant_User1");
 
-            entity.HasMany(d => d.IdConversations).WithMany(p => p.IdPlants)
+            entity.HasMany(d => d.ConversationCollection).WithMany(p => p.PlantCollection)
                 .UsingEntity<Dictionary<string, object>>(
                     "PlantConversation",
                     r => r.HasOne<Conversation>().WithMany()
@@ -423,7 +423,7 @@ public partial class PlantItContext : DbContext
                         j.IndexerProperty<int>("IdConversation").HasColumnName("id_conversation");
                     });
 
-            entity.HasMany(d => d.IdPictures).WithMany(p => p.IdPlants)
+            entity.HasMany(d => d.PictureCollection).WithMany(p => p.PlantCollection)
                 .UsingEntity<Dictionary<string, object>>(
                     "PlantPicture",
                     r => r.HasOne<Picture>().WithMany()
@@ -487,7 +487,7 @@ public partial class PlantItContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("size");
 
-            entity.HasMany(d => d.IdPictureReferences).WithMany(p => p.IdPlantReferences)
+            entity.HasMany(d => d.PictureReferenceCollection).WithMany(p => p.PlantReferenceCollection)
                 .UsingEntity<Dictionary<string, object>>(
                     "ReferencedPicture",
                     r => r.HasOne<PictureReference>().WithMany()
@@ -521,10 +521,10 @@ public partial class PlantItContext : DbContext
 
             entity.HasIndex(e => e.IdUserType, "fk_User_UserType_idx");
 
-            entity.HasIndex(e => e.AuthentificationId, "fk_user_authentification1_idx");
+            entity.HasIndex(e => e.IdAuthentification, "fk_user_authentification1_idx");
 
             entity.Property(e => e.IdUser).HasColumnName("id_user");
-            entity.Property(e => e.AuthentificationId).HasColumnName("authentification_id");
+            entity.Property(e => e.IdAuthentification).HasColumnName("authentification_id");
             entity.Property(e => e.Degree)
                 .HasMaxLength(30)
                 .IsUnicode(false)
@@ -552,12 +552,12 @@ public partial class PlantItContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("specialization");
 
-            entity.HasOne(d => d.IdAddressNavigation).WithMany(p => p.Users)
-                .HasForeignKey(d => d.IdAddress)
+            entity.HasOne(d => d.Address).WithOne(p => p.User)
+                .HasForeignKey<Address>(d => d.IdAddress)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_User_Address1");
 
-            entity.HasOne(d => d.IdUserTypeNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.UserType).WithMany(p => p.UserCollection)
                 .HasForeignKey(d => d.IdUserType)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_User_UserType");
@@ -587,7 +587,7 @@ public partial class PlantItContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("reason");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.UserHistorics)
+            entity.HasOne(d => d.User).WithMany(p => p.UserHistoricCollection)
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_UserHistoric_User1");

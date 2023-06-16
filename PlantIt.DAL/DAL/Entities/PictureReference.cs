@@ -11,5 +11,5 @@ public partial class PictureReference
 
     public DateTime? ModificationDate { get; set; }
 
-    public virtual ICollection<PlantReference> IdPlantReferences { get; set; } = new List<PlantReference>();
+    public virtual ICollection<PlantReference> PlantReferenceCollection { get; set; } = new List<PlantReference>();
 }

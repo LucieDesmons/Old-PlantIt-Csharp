@@ -11,11 +11,11 @@ public partial class Conversation
 
     public int IdUser2 { get; set; }
 
-    public virtual User IdUser1Navigation { get; set; } = null!;
+    public virtual User User1 { get; set; } = null!;
 
-    public virtual User IdUser2Navigation { get; set; } = null!;
+    public virtual User User2 { get; set; } = null!;
 
-    public virtual ICollection<Message> Messages { get; set; } = new List<Message>();
+    public virtual ICollection<Message> MessageCollection { get; set; } = new List<Message>();
 
-    public virtual ICollection<Plant> IdPlants { get; set; } = new List<Plant>();
+    public virtual ICollection<Plant> PlantCollection { get; set; } = new List<Plant>();
 }

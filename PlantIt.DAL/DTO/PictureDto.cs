@@ -14,8 +14,8 @@ namespace PlantIt.DATA.DTO
 
         public DateTime? UpdateDate { get; set; }
 
-        public List<MaintenanceDto> IdMaintenances { get; set; }
+        public List<MaintenanceDto> MaintenanceCollection { get; set; }
 
-        public List<PlantDto> IdPlants { get; set; }
+        public List<PlantDto> PlantCollection { get; set; }
     }
 }

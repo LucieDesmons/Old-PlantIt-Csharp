@@ -5,9 +5,16 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantIt.DATA", "PlantIt.DAL\PlantIt.DATA.csproj", "{A7B59485-E534-4EAA-9BF8-C7093860295D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantIt.BLL", "BLL\PlantIt.BLL.csproj", "{EBFD0DC8-0477-48FA-84EF-F8AB037519CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantIt.BLL", "BLL\PlantIt.BLL.csproj", "{EBFD0DC8-0477-48FA-84EF-F8AB037519CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7B59485-E534-4EAA-9BF8-C7093860295D} = {A7B59485-E534-4EAA-9BF8-C7093860295D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F81722EC-0962-4483-B4B4-4B6A5222D5CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F81722EC-0962-4483-B4B4-4B6A5222D5CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7B59485-E534-4EAA-9BF8-C7093860295D} = {A7B59485-E534-4EAA-9BF8-C7093860295D}
+		{EBFD0DC8-0477-48FA-84EF-F8AB037519CE} = {EBFD0DC8-0477-48FA-84EF-F8AB037519CE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ namespace PlantIt.DATA.DTO
 {
     public class AuthentificationDto
     {
-        public int Id { get; set; }
+        public int IdAuthentification { get; set; }
 
         [Required]
         [EmailAddress]
@@ -13,6 +13,6 @@ namespace PlantIt.DATA.DTO
         [Required]
         public string Password { get; set; }
 
-        public List<PasswordHistoricDto> PasswordHistorics { get; set; }
+        public List<PasswordHistoricDto> PasswordHistoricCollection { get; set; }
     }
 }

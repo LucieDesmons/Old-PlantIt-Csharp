@@ -24,12 +24,12 @@ namespace PlantIt.DATA.DTO
 
         public int IdPlantReference { get; set; }
 
-        public PlantReferenceDto IdPlantReferenceNavigation { get; set; }
+        public PlantReferenceDto PlantReference { get; set; }
 
-        public UserDto IdUserNavigation { get; set; }
+        public UserDto User { get; set; }
 
-        public List<ConversationDto> IdConversations { get; set; }
+        public List<ConversationDto> ConversationCollection { get; set; }
 
-        public List<PictureDto> IdPictures { get; set; }
+        public List<PictureDto> PictureCollection { get; set; }
     }
 }

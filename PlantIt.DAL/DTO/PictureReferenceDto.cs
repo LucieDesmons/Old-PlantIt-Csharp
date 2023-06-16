@@ -14,6 +14,6 @@ namespace PlantIt.DATA.DTO
 
         public DateTime? ModificationDate { get; set; }
 
-        public List<PlantReferenceDto> IdPlantReferences { get; set; }
+        public List<PlantReferenceDto> PlantReferenceCollection { get; set; }
     }
 }

@@ -11,5 +11,5 @@ public partial class BankDetails
 
     public int IdUser { get; set; }
 
-    public virtual User IdUserNavigation { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 }

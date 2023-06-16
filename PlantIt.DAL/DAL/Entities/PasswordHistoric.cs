@@ -11,7 +11,7 @@ public partial class PasswordHistoric
 
     public DateTime? UpdateDate { get; set; }
 
-    public int AuthentificationId { get; set; }
+    public int IdAuthentification { get; set; }
 
     public virtual Authentification Authentification { get; set; } = null!;
 }

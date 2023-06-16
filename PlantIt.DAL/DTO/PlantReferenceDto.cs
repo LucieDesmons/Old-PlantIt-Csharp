@@ -26,10 +26,11 @@ namespace PlantIt.DATA.DTO
 
         public string? Description { get; set; }
 
-        public List<CreatedByDto> CreatedBies { get; set; }
+        public List<CreatedByDto> CreatedByCollection { get; set; }
 
-        public List<PlantDto> Plants { get; set; }
+        public List<PictureReferenceDto> PictureReferenceCollection { get; set; }
 
-        public List<PictureReferenceDto> IdPictureReferences { get; set; }
+        public List<PlantDto> PlantCollection { get; set; }
+
     }
 }

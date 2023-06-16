@@ -12,6 +12,6 @@ namespace PlantIt.DATA.DTO
 
         public string? Label { get; set; }
 
-        public List<UserDto> Users { get; set; } = new List<UserDto>();
+        public List<UserDto> UserCollection { get; set; } = new List<UserDto>();
     }
 }
